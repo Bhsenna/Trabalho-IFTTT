@@ -1,0 +1,14 @@
+// Cópia do código do Google App-Script usado no index.html
+// Colocado aqui apenas para demonstração
+function doPost(e) {
+  var ss = SpreadsheetApp.openById("1O5myGL9nlvQcOQc527OIwFeFXhg1fzGC1yNsDdcIPYI");
+  var sheet = ss.getSheets()[0];
+
+  var data = new Date();
+  var nome = e.parameter.nome;
+  var mensagem = e.parameter.mensagem;
+
+  sheet.appendRow([data, nome, mensagem]);
+
+  return ContentService.createTextOutput("OK");
+}
